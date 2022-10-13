@@ -2,4 +2,16 @@
         org.clojure/clojurescript {:mvn/version "1.10.773"}
         cljsjs/react {:mvn/version "16.8.6-0"}
         cljsjs/react-dom {:mvn/version "16.8.6-0"}}
- :aliases {:test {:extra-paths ["test"]}}}
+ :aliases {
+           :test {:extra-paths ["test"]}
+
+
+           :build
+           {:deps
+            {
+             io.github.clojure/tools.build      {:git/tag "v0.8.3" :git/sha "0d20256"}
+             io.github.ajchemist/user.java.time {:mvn/version "2022.75.23671"}
+             }
+            :ns-default build.package}
+           }
+ }

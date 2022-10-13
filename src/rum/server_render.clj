@@ -327,7 +327,7 @@
                (= "textarea" tag))) :nop
       (.startsWith attr "aria-") (render-attr-str! sb attr value)
       (not value)      :nop
-      (true? value)    (append! sb " " attr "=\"\"")
+      (true? value)    (append! sb " " attr)
       (.startsWith attr "on") (if (string? value)
                                 (render-attr-str! sb attr value)
                                 :nop)
